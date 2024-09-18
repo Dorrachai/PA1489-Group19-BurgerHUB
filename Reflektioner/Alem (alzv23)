@@ -1,4 +1,7 @@
 Diary for Alem Zvirkic
 -------------------------------
 
-Hello we are testing to push
+This is my first time working with git and github but so far there has not been any major complications.
+I like the fact that you can use branches so that you can always go back to the working clean code.
+We have planned ahead and set deadlines so we have a plan and what needs to be done when.
+Some commands in git that I learned today that are useful: git commit -m"" , git push origin "branch"
