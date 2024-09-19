@@ -1,7 +1,8 @@
 BurgerHub burger
 -----------------------------
-
+Jamburger:
 This burger has 1 beef patty
+
 Drinks: Cola, Cola zero, Fanta exotic, Water, Milk, Applejuice, Gränges.
 Toppings are: Blueberry Jam, Caramlized onions, 2 cheese slices
 Sauces: None
