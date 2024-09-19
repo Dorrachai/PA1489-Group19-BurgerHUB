@@ -3,7 +3,9 @@ BurgerHub burger
 
 Doubletrouble:
 
-This burger has not one patty but two. Toppings: tomato, lettuce, cucumber, onion and cheese. Sauces: BurgerHubspecial.
+This burger has not one patty but two.
+Toppings: tomato, lettuce, cucumber, onion and cheese.
+Sauces: BurgerHubspecial.
 
 Drinks:
 
