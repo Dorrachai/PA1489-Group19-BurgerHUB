@@ -7,6 +7,6 @@ This burger has not one patty but two.
 Toppings: tomato, lettuce, cucumber, onion and cheese.
 Sauces: BurgerHubspecial.
 
-Drinks:
+Drinks: Cola, Cola zero, Fanta exotic, Water, Milk, Applejuice, Gränges.
 
-Sidedishes: French fries, Sweet potato fries, Apple slices, Mozzarella sticks, Mashed Potatoes.
+Side dishes: French fries, Sweet potato fries, Apple slices, Mozzarella sticks, Mashed Potatoes.

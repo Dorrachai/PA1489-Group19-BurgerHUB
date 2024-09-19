@@ -3,7 +3,9 @@ BurgerHub burger
 
 McCaterpillar: 
 This Burger has 4 smashed beef pattys. 
-The Toppings are: 4 slices of chedder cheese, Fried Egg, Peas, Onions, Roasted onions, Lettuce.
+Toppings: 4 slices of chedder cheese, Fried Egg, Peas, Onions, Roasted onions, Lettuce.
 Sauces: Aoili, Ketchup. 
 
 Drinks: Cola, Cola zero, Fanta exotic, Water, Milk, Applejuice, Gränges.
+
+Side dishes: French fries, Sweet potato fries, Apple slices, Mozzarella sticks, Mashed Potatoes.
