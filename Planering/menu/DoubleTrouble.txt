@@ -1,4 +1,4 @@
-Menu for BurgerHub
+BurgerHub burger
 ---------------------
 
 Doubletrouble:
