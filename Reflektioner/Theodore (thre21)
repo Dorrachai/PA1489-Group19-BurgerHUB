@@ -1,2 +1,19 @@
 Diary for Theodore Reangpusri
 -------------------------------
+
+18/9:
+Today I got access to the course, I quickly formed a group with two other members and we started the preplanning phase for this project. 
+Pre-planning consisted of work distribution, strenghts and weaknesses of each member, tools/frameworks/languages to use, git and github setup and initial
+testing of committing code to the same repo using different branches. I was responisble for helping my project-partners with the git setup and branch management
+as I had some prior experience with using git and github. After our first test commits and pushes we merged the content of each brain into the main branch
+and reviewed our merg-requests in order to find poential conflicts. No conflicts were found and we could merge everything with ease. 
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+19/9:
+We started the day by checking our issue board on Trello in order to see what we should do for the day. We were able to mark a majority of the tasks as done
+as all of our members had git up and working and due to us deeming our research as done. This day we spent time on creating our menus and discussing limitations
+of the BurgerHub store. We did also edit eachothers files from our own branches and members own created branches and published the changes to github in order to practice collaboration. Everything was merged succesfully and Assignment 1 had been completed.
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+20/9:
+Today we contacted Mikael to check if we were on the right track in this project and ask questions about assignment 2. Our questions were answered and we started working on Assignment 2 by database coding and docker setup.
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
