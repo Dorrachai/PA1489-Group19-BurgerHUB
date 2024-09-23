@@ -1,5 +1,5 @@
 burger_name, patty, toppings, sauce, sidedish, drink
-"DoubleTrouble","beef",tomato,lettuce,cucumber,onion,cheese","BurgerHubspecial","Frenchfries","Colazero"
+"DoubleTrouble","beef",tomato,"lettuce,cucumber","onion","cheese","BurgerHubspecial","Frenchfries","Colazero"
 
 
 
