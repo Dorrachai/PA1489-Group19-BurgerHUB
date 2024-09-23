@@ -2,7 +2,7 @@ DELETE FROM MenuTb;
 DELETE FROM SidesTb;
 DELETE FROM DrinksTb;
 
-SET GLOBAL local_infile = 3;
+SET GLOBAL local_infile = 1;
 
 LOAD DATA LOCAL INFILE 'menu.csv'
 INTO TABLE MenuTb
