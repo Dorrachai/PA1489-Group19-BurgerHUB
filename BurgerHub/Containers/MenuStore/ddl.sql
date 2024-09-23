@@ -32,6 +32,6 @@ CREATE TABLE `DrinksTb`
 CREATE TABLE `OrdersTb`
 (
 
-    `orders` VARCHAR (40),
+    `orders` VARCHAR (40)
 
 );
