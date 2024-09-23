@@ -13,25 +13,25 @@ CREATE TABLE `MenuTb`
     `sidedish` VARCHAR (40),
     `drink` VARCHAR (40)
 
-)
+);
 
 CREATE TABLE `SidesTb`
 (
 
     `side_name` VARCHAR (120)
 
-)
+);
 
 CREATE TABLE `DrinksTb`
 (
 
     `drink_name` VARCHAR (120)
 
-)
+);
 
 CREATE TABLE `OrdersTb`
 (
 
     `orders` VARCHAR (40),
 
-)
+);
