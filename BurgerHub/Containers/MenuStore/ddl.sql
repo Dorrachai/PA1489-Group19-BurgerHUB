@@ -18,14 +18,14 @@ CREATE TABLE `MenuTb`
 CREATE TABLE `SidesTb`
 (
 
-    `side_name` VARCHAR (40),
+    `side_name` VARCHAR (120),
 
 )
 
 CREATE TABLE `DrinksTb`
 (
 
-    `drink_name` VARCHAR (40),
+    `drink_name` VARCHAR (120),
 
 )
 
