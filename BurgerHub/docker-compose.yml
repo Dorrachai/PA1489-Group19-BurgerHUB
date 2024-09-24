@@ -1,20 +1,11 @@
+version: '3'
 services:
   app:
     build: .
     ports:
-      - "3000:3000"
+      - "8008:8008"  # Map the container's port to the host
     volumes:
-      - .:/usr/src/app
-    working_dir: /usr/src/app
-    command: "npm start"
+      - .:/app  # Bind mount your project folder to the container for live reloads
     environment:
-      NODE_ENV: development
-    depends_on:
-      - db
-
-  db:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    volumes:
-      - ./data:/data/db
+      - NODE_ENV=development
+    command: ["node", "index.js"]  # Command to run your Express app
