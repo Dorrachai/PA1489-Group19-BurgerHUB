@@ -18,5 +18,12 @@ Today we contacted Mikael to check if we were on the right track in this project
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 23/9:
-The the official start of assignment 2 we started the creation of setups. We sat in a group and did some pair programming. I spent most of the time trying to implement docker into our project. Even though familliar with docker I rarely use it myself and spent a lot of time with little to no success in implementing it. 
+The official start of assignment 2 we started the creation of setups. We sat in a group and did some pair programming. I spent most of the time trying to implement docker into our project. Even though familliar with docker I rarely use it myself and spent a lot of time with little to no success in implementing it. 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+24/9:
+Today we focused on setting up our ddocker containers to work with our backend code. The resuslt were successful as we were able to connect to our database via docker, now we only need to add frontend,functionality and a correct redirect for this assignment to be considered as complete.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+27/9:
+I missed two days of work due to  traveling as I am moving to 日本. I will try to catch up on the work I missed by working extra hard on the days I am able to work. Timezones are making it difficult with meeting but we are communicating a lot via messages and I plan my days to work after the swedish timezone, for the sake of my lab partners.
+This day I went trough our repo to read and check updates. I plan to do some frontend work this weekend. 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
