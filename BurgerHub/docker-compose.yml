@@ -1,0 +1,11 @@
+version: '3'
+services:
+  app:
+    build: .
+    ports:
+      - "8008:8008"  # Map the container's port to the host
+    volumes:
+      - .:/app  # Bind mount your project folder to the container for live reloads
+    environment:
+      - NODE_ENV=development
+    command: ["node", "index.js"]  # Command to run your Express app
