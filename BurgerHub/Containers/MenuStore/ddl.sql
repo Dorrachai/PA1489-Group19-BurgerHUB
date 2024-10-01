@@ -31,7 +31,9 @@ CREATE TABLE `DrinksTb`
 
 CREATE TABLE `OrdersTb`
 (
-
-    `orders` VARCHAR (40)
+    `order_id` int NOT NULL AUTO_INCREMENT UNIQUE,
+    `burger` VARCHAR (40),
+    `sides` VARCHAR (40),
+    `drink` VARCHAR (40)
 
 );
