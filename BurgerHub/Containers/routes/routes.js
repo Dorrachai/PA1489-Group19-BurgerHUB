@@ -15,4 +15,11 @@ router.get("/order", (req, res) => {
     res.render("./../Containers/views/pages/order.ejs");
 });
 
+router.get("/place-order", (req, res) => {
+    const burger = req.query.burger;
+    res.render("./../Containers/views/pages/place-order.ejs", { burger });
+});
+
+
+
 module.exports = router;
