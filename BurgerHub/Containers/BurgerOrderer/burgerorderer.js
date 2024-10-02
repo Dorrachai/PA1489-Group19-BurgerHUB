@@ -1,6 +1,6 @@
 "use strict";
 
-const config = require("placeholder")// insert config file
+const config = require("./MenuStore/config/burgerhub.json")// insert config file
 const mysql = require("promise-mysql");
 
 
