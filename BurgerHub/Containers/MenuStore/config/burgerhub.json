@@ -1,0 +1,7 @@
+{
+    "host": "MiniMir.local",
+    "user": "dbadm",
+    "password": "P@ssw0rd",
+    "database": "BurgerHub",
+    "multipleStatements": true
+}
