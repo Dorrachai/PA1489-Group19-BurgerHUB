@@ -1,5 +1,5 @@
 {
-    "host": "MiniMir.local",
+    "host": "mysql-db",
     "user": "dbadm",
     "password": "P@ssw0rd",
     "database": "BurgerHub",
