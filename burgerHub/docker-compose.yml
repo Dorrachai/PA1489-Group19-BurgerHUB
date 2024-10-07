@@ -1,15 +1,15 @@
 services:
   app:
-    build: .
+    build: .  # Build the image from the Dockerfile in the current directory
     ports:
-      - "8008:8008"  # Map the container's port 8008 to the host
+      - "8008:8008"  # Map container's port 8008 to the host
     volumes:
-      - .:/app       # Sync the app directory
-      - /app/node_modules  # Prevent node_modules from being overwritten
+      - .:/app  # Sync the app directory to /app inside the container
+      - /app/node_modules  # Prevent overwriting node_modules on host
     environment:
       NODE_ENV: development
     depends_on:
-      - mysql-db     # Ensure the MySQL service is started before the Node.js app
+      - mysql-db  # Ensure the MySQL service is started before the Node.js app
     command: ["node", "index.js"]  # Command to run your Express app
     networks:
       - app-network

@@ -4,7 +4,7 @@ DELETE FROM DrinksTb;
 
 SET GLOBAL local_infile = 1;
 
-LOAD DATA LOCAL INFILE 'menu.csv'
+LOAD DATA LOCAL INFILE '/app/menuStore/menu.csv'
 INTO TABLE MenuTb
 CHARSET utf8
 FIELDS
@@ -15,7 +15,7 @@ TERMINATED BY '\n'
 IGNORE 1 LINES
 ;
 
-LOAD DATA LOCAL INFILE 'sides.csv'
+LOAD DATA LOCAL INFILE '/app/menuStore/sides.csv'
 INTO TABLE SidesTb
 CHARSET utf8
 FIELDS
@@ -26,7 +26,7 @@ TERMINATED BY '\n'
 IGNORE 1 LINES
 ;
 
-LOAD DATA LOCAL INFILE 'drinks.csv'
+LOAD DATA LOCAL INFILE '/app/menuStore/drinks.csv'
 INTO TABLE DrinksTb
 CHARSET utf8
 FIELDS
