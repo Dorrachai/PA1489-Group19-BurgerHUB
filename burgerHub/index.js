@@ -3,14 +3,13 @@
 const express = require("express");
 const port = 8008;
 const app = express();
-const indexRoutes = require("./Containers/routes/routes.js");
+const indexRoutes = require("/app/containers/routes/routes.js");
 
 app.set("view engine", "ejs");
 
-app.use(express.static("Containers/public"));
+app.use(express.static("containers/public"));
 
 app.use(express.urlencoded({ extended: false }));
-
 
 app.use(indexRoutes);
 

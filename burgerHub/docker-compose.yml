@@ -1,0 +1,38 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8008:8008"  # Map the container's port 8008 to the host
+    volumes:
+      - .:/app       # Sync the app directory
+      - /app/node_modules  # Prevent node_modules from being overwritten
+    environment:
+      NODE_ENV: development
+    depends_on:
+      - mysql-db     # Ensure the MySQL service is started before the Node.js app
+    command: ["node", "index.js"]  # Command to run your Express app
+    networks:
+      - app-network
+
+  mysql-db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: BurgerHub
+      MYSQL_USER: dbadm
+      MYSQL_PASSWORD: P@ssw0rd
+      MYSQL_ALLOW_LOCAL_INFILE: '1'
+    ports:
+      - "3306:3306"  # Expose MySQL on port 3306
+    volumes:
+      - db_data:/var/lib/mysql  # Persist MySQL data
+      - ./db-init:/docker-entrypoint-initdb.d  # Mount db-init directory for initializing DB
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge

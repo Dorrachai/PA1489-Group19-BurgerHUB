@@ -7,6 +7,9 @@ package-lock.json
 # Ignore system files
 .DS_Store
 
+# Ignore Data folder
+/data/
+
 # Ignore logs
 *.log
 
