@@ -27,3 +27,6 @@ Today we focused on setting up our ddocker containers to work with our backend c
 I missed two days of work due to  traveling as I am moving to 日本. I will try to catch up on the work I missed by working extra hard on the days I am able to work. Timezones are making it difficult with meeting but we are communicating a lot via messages and I plan my days to work after the swedish timezone, for the sake of my lab partners.
 This day I went trough our repo to read and check updates. I plan to do some frontend work this weekend. 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
+3/10:
+This day we had a meeting. I was mainly working on getting the docker to work which was a success. it is now possible to run everything by just composing docker however the database is empty. I will work on that next time.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
