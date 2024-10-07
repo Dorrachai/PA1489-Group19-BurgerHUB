@@ -30,3 +30,6 @@ This day I went trough our repo to read and check updates. I plan to do some fro
 3/10:
 This day we had a meeting. I was mainly working on getting the docker to work which was a success. it is now possible to run everything by just composing docker however the database is empty. I will work on that next time.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
+7/10:
+Worked together to solve the error with database being empty. However little progress. We managed to fix so that is it possible to place an order no as the routes were wrong before.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
