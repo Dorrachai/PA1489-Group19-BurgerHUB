@@ -1,6 +1,6 @@
 "use strict";
 
-const config = require("/home/amir/1489/PA1489-Group19-BurgerHUB/burgerHub/containers/menuStore/config/burgerhub.json");
+const config = require("/app/containers/menuStore/config/burgerhub.json");
 const mysql = require("mysql2/promise");  // Use mysql2 with promises
 
 let functions = {
@@ -12,14 +12,13 @@ let functions = {
             let sql = `SELECT * FROM SidesTb`;  // Query to select all sides
             const [rows] = await db.execute(sql);  // Execute the query
             await db.end();  // Close the database connection
-            
+
             return rows;  // Return the entire array of rows, not just the first row
         } catch (error) {
             console.error("Error executing query in editOrder:", error);
             throw error;  // Optionally throw the error so it can be handled elsewhere
         }
     },
-    
 
     // Function to place an order (inserting data)
     placeOrder: async function (burger, sides, drink) {

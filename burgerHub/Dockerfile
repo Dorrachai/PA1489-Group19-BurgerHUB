@@ -4,13 +4,6 @@ FROM node:14
 # Set the working directory inside the container
 WORKDIR /app
 
-# RUN mysql -u dbadm -p
-# RUN P@ssw0rd
-# RUN USE BurgerHub;
-RUN cd db-init
-RUN mariadb --table < init.sql
-RUN cd ..
-
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
