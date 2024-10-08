@@ -22,6 +22,7 @@ services:
       MYSQL_USER: dbadm
       MYSQL_PASSWORD: P@ssw0rd
       MYSQL_ALLOW_LOCAL_INFILE: '1'
+      MYSQL_INIT_COMMAND: "SET GLOBAL local_infile=1"
     command: --local-infile=1
     ports:
       - "3306:3306"  # Expose MySQL on port 3306
