@@ -1,6 +1,6 @@
-SOURCE setup.sql;
+SOURCE /app/menuStore/setup.sql;
 
 USE BurgerHub;
 
-SOURCE ddl.sql;
-SOURCE insert.sql;
+SOURCE /app/menuStore/ddl.sql;
+SOURCE /app/menuStore/insert.sql;

@@ -27,3 +27,23 @@ We spent most of the time today on the docker so it would work. It took some tim
 We started making the website with routes, views and such.
 
 09/27
+
+
+09/30
+We started making the edit order page but encounterd problems with the database
+
+10/01
+Countined debugging the database
+
+10/02
+Fixed description for the burgers
+
+10/03
+Managed to get the docker to work again with the place order page but the database was still empty
+
+10/07
+The placeorder website stopped working again since it said that the tables were empty
+
+10/08
+We got a new groupmember today
+Managed to fix the docker again so it starts and also figuerd out why the database did not work. The database is now created and works, the tables are also created and works last thing is to fix the insert I managed to get it working with manully running the command on my pc but when I run with docker the tables are empty seems to be a problem with the local_infile. Will try to fix it tmrw we should be done soon.
