@@ -1,1 +1,35 @@
-Test for github
+Diary for Tuva Rutberg
+-------------------------------
+4/10
+CHANGED GROUP
+
+17/9
+We have decidedas group have decided to work with the assignment twice
+a week - Tuesdays and Thursdays. We're will use VsCode. There's one 
+person who hasn't shown up yet. We decided to give the person another
+chance to join on Thursday. Today, we're looking into how to link to a 
+repository on GitHub:
+    - Each time you want to upload something, you need to pull first
+    before you can push
+    - Git add .
+    - Git commit -m "message"
+    - Git push origin (branch name)
+
+19/9
+We created a Discord server for group communication. We tried to commit
+files to Git but failed.
+
+24/9
+Transferred the assignment description to README.md; will refine it later
+
+-------------------------------
+
+CHANGED GROUP
+
+8/10
+First meeting with the new group:
+They have made a lot of progress, and I'm keeping up as best as I can.
+I've been added to their GitHub and have cloned the repository. I created
+my own branch using the command git branch -c "name". Then used 
+git switch "branch name" to switch to that brand. I've created my own 
+menu for my burger and have been granted access to commit to the GitHub repository. 
