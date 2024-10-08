@@ -12,7 +12,7 @@ let functions = {
             let sql = `SELECT * FROM SidesTb`;  // Query to select all sides
             const [rows] = await db.execute(sql);  // Execute the query
             await db.end();  // Close the database connection
-
+            console.log(rows);
             return rows;  // Return the entire array of rows, not just the first row
         } catch (error) {
             console.error("Error executing query in editOrder:", error);
