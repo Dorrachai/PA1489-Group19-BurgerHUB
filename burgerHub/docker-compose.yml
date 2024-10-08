@@ -22,11 +22,13 @@ services:
       MYSQL_USER: dbadm
       MYSQL_PASSWORD: P@ssw0rd
       MYSQL_ALLOW_LOCAL_INFILE: '1'
+    command: --local-infile=1
     ports:
       - "3306:3306"  # Expose MySQL on port 3306
     volumes:
       - db_data:/var/lib/mysql  # Persist MySQL data
-      - ./db-init:/docker-entrypoint-initdb.d  # Mount db-init directory for initializing DB
+      - ./containers/menuStore:/docker-entrypoint-initdb.d  # Mount db-init directory for initializing DB
+      - ./menuStore/config:/data
     networks:
       - app-network
 
