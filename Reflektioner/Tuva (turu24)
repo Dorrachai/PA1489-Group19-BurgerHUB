@@ -32,4 +32,4 @@ They have made a lot of progress, and I'm keeping up as best as I can.
 I've been added to their GitHub and have cloned the repository. I created
 my own branch using the command git branch -c "name". Then used 
 git switch "branch name" to switch to that brand. I've created my own 
-menu for my burger and have been granted access to commit to the GitHub repository. 
+menu for my burger and have been granted access to commit to the GitHub repository. I've added a picture, burger to menu csv and html for krabbypatty
