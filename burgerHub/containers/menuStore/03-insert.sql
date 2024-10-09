@@ -1,3 +1,5 @@
+USE BurgerHub;
+
 DELETE FROM MenuTb;
 DELETE FROM SidesTb;
 DELETE FROM DrinksTb;

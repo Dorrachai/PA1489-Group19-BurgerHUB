@@ -1,3 +1,4 @@
+version: '3'
 services:
   app:
     build: .  # Build the image from the Dockerfile in the current directory
@@ -21,15 +22,13 @@ services:
       MYSQL_DATABASE: BurgerHub
       MYSQL_USER: dbadm
       MYSQL_PASSWORD: P@ssw0rd
-      MYSQL_ALLOW_LOCAL_INFILE: '1'
-      MYSQL_INIT_COMMAND: "SET GLOBAL local_infile=1"
-    command: --local-infile=1
     ports:
       - "3306:3306"  # Expose MySQL on port 3306
     volumes:
       - db_data:/var/lib/mysql  # Persist MySQL data
       - ./containers/menuStore:/docker-entrypoint-initdb.d  # Mount db-init directory for initializing DB
-      - ./menuStore/config:/data
+      - ./containers/menuStore/config:/data  # Data directory for .sql files
+      - ./containers/menuStore/config/my.cnf:/etc/mysql/conf.d/my.cnf  # Mount the custom my.cnf file
     networks:
       - app-network
 
