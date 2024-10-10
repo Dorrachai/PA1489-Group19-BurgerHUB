@@ -1,0 +1,15 @@
+.order-success {
+    font-family: inherit; /*Text font */
+    display: flex;
+    justify-content: center; /* Centers horizontal*/
+    align-items: center; /*Centers vertically*/
+    flex-direction: column; /*Text shows in column layout*/
+    min-height: 100vh; /*Uses the whole page*/
+}
+
+.order-success h2 {
+    font-size: 30px; /*Test size*/
+    text-align: center; /* Centers text horizontally within h2*/
+    margin: 0; /*removes margins*/
+    padding-top: 100px;
+}

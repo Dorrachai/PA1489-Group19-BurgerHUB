@@ -24,8 +24,8 @@ router.get("/place-order", async (req, res) => {
 
 router.post("/place-order", (req, res) => {
     try {
-        const { burger, sides, drink } = req.body;
-        res.send("Order placed successfully!");
+        // const { burger, sides, drink } = req.body;
+        res.render("./../containers/views/pages/order-success");
     } catch (error) {
         res.status(500).send("An error occurred while placing the order");
     }
