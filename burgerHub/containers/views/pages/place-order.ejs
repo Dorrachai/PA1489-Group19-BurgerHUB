@@ -1,17 +1,52 @@
 <%- include("./../partials/header.ejs")  %>
-<!-- order.ejs -->
-<h2>Select a Burger</h2>
 
-<form action="/place-order" method="POST">
-    <label for="sidedish">Choose your side dish:</label>
-    <select name="sidedish" id="sidedish">
-        <% sides.forEach(function(sidedish) { %>
-            <option value="<%= sidedish.side_name %>"><%= sidedish.side_name %></option>
-        <% }); %>
-    </select>
+<div class="place-order">
+    <h2>Customize Your Burger</h2>
 
-    <!-- Submit button to proceed -->
-    <button type="submit">Place Order</button>
-</form>
+    <form action="/place-order" method="POST">
+        <!-- Burger name (hidden or displayed, as needed) -->
+        <p>Burger: <%= burgerInfo.burger_name %></p>
+
+        <!-- Topping 1 dropdown -->
+        <label for="topping1">Topping 1:</label>
+        <select name="topping1" id="topping1">
+            <option value="<%= burgerInfo.toppings[0] %>"><%= burgerInfo.toppings[0] %></option>
+            <option value="none">none</option>
+        </select>
+
+        <!-- Topping 2 dropdown -->
+        <label for="topping2">Topping 2:</label>
+        <select name="topping2" id="topping2">
+            <option value="<%= burgerInfo.toppings[1] %>"><%= burgerInfo.toppings[1] %></option>
+            <option value="none">none</option>
+        </select>
+
+        <!-- Topping 3 dropdown -->
+        <label for="topping3">Topping 3:</label>
+        <select name="topping3" id="topping3">
+            <option value="<%= burgerInfo.toppings[2] %>"><%= burgerInfo.toppings[2] %></option>
+            <option value="none">none</option>
+        </select>
+
+        <!-- Side dish dropdown -->
+        <label for="sidedish">Choose your side dish:</label>
+        <select name="sidedish" id="sidedish">
+            <% sides.forEach(function(sidedish) { %>
+                <option value="<%= sidedish.side_name %>"><%= sidedish.side_name %></option>
+            <% }); %>
+        </select>
+
+        <!-- Beverage dropdown -->
+        <label for="beverage">Choose your beverage:</label>
+        <select name="beverage" id="beverage">
+            <% drinks.forEach(function(drink) { %>
+                <option value="<%= drink.drink_name %>"><%= drink.drink_name %></option>
+            <% }); %>
+        </select>
+
+        <!-- Submit button -->
+        <button type="submit">Place Order</button>
+    </form>
+</div>
 
 <%- include("./../partials/footer.ejs")  %>

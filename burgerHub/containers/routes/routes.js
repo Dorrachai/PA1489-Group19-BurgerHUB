@@ -15,8 +15,11 @@ router.get("/order", (req, res) => {
 router.get("/place-order", async (req, res) => {
     try {
         const burger = req.query.burger;
-        const sides = await src.editOrder();
-        res.render("./../containers/views/pages/place-order.ejs", { burger, sides });
+        console.log(burger);
+        const burgerInfo = await src.getBurger(burger);
+        const sides = await src.getSides();
+        const drinks = await src.getDrinks();
+        res.render("./../containers/views/pages/place-order.ejs", { burgerInfo, sides, drinks });
     } catch (error) {
         res.status(500).send("An error occurred");
     }
