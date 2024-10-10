@@ -1,1 +1,16 @@
-/*...
+/* Style for the select dropdown box */
+select {
+    color: black; /* Text color */
+    background-color: white; /* Background color for the dropdown */
+    width: 300px; /* Width of the dropdown */
+    height: 40px; /* Height of the dropdown */
+    border: 1px solid #ccc; /* Optional border */
+    padding: 5px; /* Optional padding */
+    font-family: inherit; /* Inherit font from body */
+}
+
+/* Style for the options inside the select dropdown */
+option {
+    color: black; /* Text color for the options */
+    background-color: white; /* Background color for the options */
+}

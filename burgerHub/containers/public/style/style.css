@@ -1,5 +1,6 @@
 @import url('index.css');
 @import url('order.css');
+@import url('place-order.css');
 
 body {
     background-color: #1c1c1c;
