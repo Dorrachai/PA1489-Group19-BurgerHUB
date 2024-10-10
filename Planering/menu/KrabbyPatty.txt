@@ -6,7 +6,7 @@ Krabbypatty:
 This burger has 1 beef patty
 
 Drinks: Cola, Cola zero, Fanta exotic, Water, Milk, Applejuice, Gränges.
-Toppings are: Cheese, Pickles, Lettuce, Tomatoes, Onions.
+Toppings are: Cheese, Pickles and Onions.
 Sauces: Ketchup, Mustard.
 
 Side dishes: French fries, Sweet potato fries, Apple slices, Carrot sticks, Mozzarella sticks,  Mashed Potatoes.
