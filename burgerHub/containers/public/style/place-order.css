@@ -1,16 +1,38 @@
-/* Style for the select dropdown box */
-select {
-    color: black; /* Text color */
-    background-color: white; /* Background color for the dropdown */
-    width: 300px; /* Width of the dropdown */
-    height: 40px; /* Height of the dropdown */
-    border: 1px solid #ccc; /* Optional border */
-    padding: 5px; /* Optional padding */
-    font-family: inherit; /* Inherit font from body */
+/* Scope all styles to .place-order to prevent conflicts */
+.place-order {
+    max-width: 400px;
+    margin: 0 auto; /* Center the form */
 }
 
-/* Style for the options inside the select dropdown */
-option {
+.place-order label, .place-order select, .place-order button {
+    display: block;
+    width: 100%; /* Full width */
+    margin-bottom: 15px; /* Space between elements */
+}
+
+.place-order select {
+    color: black; /* Text color */
+    background-color: white; /* Background color for the dropdown */
+    height: 40px; /* Height of the dropdown */
+    border: 1px solid #ccc; /* Border around dropdown */
+    padding: 5px;
+    font-family: inherit;
+}
+
+.place-order option {
     color: black; /* Text color for the options */
     background-color: white; /* Background color for the options */
+}
+
+.place-order button {
+    width: auto; /* Fit the button to its content */
+    padding: 10px 20px; /* Padding for the button */
+    background-color: #ff4500; /* Button background color */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.place-order button:hover {
+    background-color: #ff6347; /* Hover effect */
 }
