@@ -26,9 +26,6 @@ We spent most of the time today on the docker so it would work. It took some tim
 09/26
 We started making the website with routes, views and such.
 
-09/27
-
-
 09/30
 We started making the edit order page but encounterd problems with the database
 
@@ -47,3 +44,9 @@ The placeorder website stopped working again since it said that the tables were 
 10/08
 We got a new groupmember today
 Managed to fix the docker again so it starts and also figuerd out why the database did not work. The database is now created and works, the tables are also created and works last thing is to fix the insert I managed to get it working with manully running the command on my pc but when I run with docker the tables are empty seems to be a problem with the local_infile. Will try to fix it tmrw we should be done soon.
+
+10/09
+Continued fixing the database problem most of the day. We managed to get it working through a different terminal. It did not work on my git bash terminal but worked on Amir's ubunutu terminal. The problem was that we have a my.cnf file that is a config file. When I ran it docker saw it as a writable file and ignored it because it does not like writable config files. But when ran through ubunutu that is a linux terminal it worked. I ran "chmod a-w myfile.txt" on my pc it made it only readable for me and docker worked again.
+
+10/10
+Now we are working quicker again since menustore works as it should. 
