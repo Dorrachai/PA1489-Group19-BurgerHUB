@@ -4,8 +4,8 @@
     <h2>Customize Your Burger</h2>
 
     <form action="/place-order" method="POST">
-        <!-- Burger name (hidden or displayed, as needed) -->
-        <p>Burger: <%= burgerInfo.burger_name %></p>
+        <!-- Burger name (hidden) -->
+        <input type="hidden" name="burger" value="<%= burgerInfo.burger_name %>">
 
         <!-- Topping 1 dropdown -->
         <label for="topping1">Topping 1:</label>
@@ -29,16 +29,16 @@
         </select>
 
         <!-- Side dish dropdown -->
-        <label for="sidedish">Choose your side dish:</label>
-        <select name="sidedish" id="sidedish">
+        <label for="sides">Choose your side dish:</label>
+        <select name="sides" id="sides">
             <% sides.forEach(function(sidedish) { %>
                 <option value="<%= sidedish.side_name %>"><%= sidedish.side_name %></option>
             <% }); %>
         </select>
 
         <!-- Beverage dropdown -->
-        <label for="beverage">Choose your beverage:</label>
-        <select name="beverage" id="beverage">
+        <label for="drink">Choose your beverage:</label>
+        <select name="drink" id="drink">
             <% drinks.forEach(function(drink) { %>
                 <option value="<%= drink.drink_name %>"><%= drink.drink_name %></option>
             <% }); %>
