@@ -5,11 +5,47 @@ const mysql = require("mysql2/promise");  // Use mysql2 with promises
 
 let functions = {
 
-    // Function to edit an order (querying data)
-    editOrder: async function () {
+    getBurger: async function (burger) {
+        try {
+            const db = await mysql.createConnection(config);  // Connect to the database
+            let sql = `SELECT * FROM MenuTb WHERE burger_name = ?`;  // Query to select the burger
+            const [rows] = await db.execute(sql, [burger]);  // Execute the query with the burger parameter
+            
+            await db.end();  // Close the database connection
+    
+            if (rows.length > 0) {
+                // Assuming 'toppings' is stored as a comma-separated string in the database
+                const toppings = rows[0].toppings.split(',').map(topping => topping.trim());  // Split and trim toppings
+                return { ...rows[0], toppings };  // Return the burger data along with the toppings array
+            } else {
+                return null;  // Handle case when no burger is found
+            }
+        } catch (error) {
+            console.error("Error executing query in getBurger:", error);
+            throw error;  // Optionally throw the error so it can be handled elsewhere
+        }
+    },
+    
+    
+
+    getSides: async function () {
         try {
             const db = await mysql.createConnection(config);  // Connect to the database
             let sql = `SELECT * FROM SidesTb`;  // Query to select all sides
+            const [rows] = await db.execute(sql);  // Execute the query
+            await db.end();  // Close the database connection
+            console.log(rows);
+            return rows;  // Return the entire array of rows, not just the first row
+        } catch (error) {
+            console.error("Error executing query in editOrder:", error);
+            throw error;  // Optionally throw the error so it can be handled elsewhere
+        }
+    },
+
+    getDrinks: async function () {
+        try {
+            const db = await mysql.createConnection(config);  // Connect to the database
+            let sql = `SELECT * FROM DrinksTb`;  // Query to select all sides
             const [rows] = await db.execute(sql);  // Execute the query
             await db.end();  // Close the database connection
             console.log(rows);
