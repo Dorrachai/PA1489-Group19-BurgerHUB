@@ -25,13 +25,21 @@ router.get("/place-order", async (req, res) => {
     }
 });
 
-router.post("/place-order", (req, res) => {
+router.post("/place-order", async (req, res) => {
     try {
-        // const { burger, sides, drink } = req.body;
-        res.render("./../containers/views/pages/order-success");
+        console.log("Form data received:", req.body);  
+        const { burger, sides, drink } = req.body;  
+        const result = await src.placeOrder(burger, sides, drink);  
+        if (result) {
+            res.render("./../containers/views/pages/order-success");  
+        } else {
+            res.status(500).send("Order placement failed: No result returned from DB.");
+        }
     } catch (error) {
-        res.status(500).send("An error occurred while placing the order");
+        console.error("Error placing the order:", error);  // Log the full error
+        res.status(500).send(`An error occurred while placing the order: ${error.message}`);
     }
 });
+
 
 module.exports = router;
