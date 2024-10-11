@@ -2,10 +2,12 @@
 
 <div class="place-order">
     <h2>Customize Your Burger</h2>
+    <h2><%= burgerInfo.burger_name %></h2>
 
     <form action="/place-order" method="POST">
-        <!-- Burger name (hidden) -->
-        <input type="hidden" name="burger" value="<%= burgerInfo.burger_name %>">
+
+        <!-- Hidden input for burger_name -->
+        <input type="hidden" name="burger_name" value="<%= burgerInfo.burger_name %>">
 
         <!-- Topping 1 dropdown -->
         <label for="topping1">Topping 1:</label>

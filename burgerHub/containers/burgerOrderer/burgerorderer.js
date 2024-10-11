@@ -25,8 +25,6 @@ let functions = {
             throw error;  // Optionally throw the error so it can be handled elsewhere
         }
     },
-    
-    
 
     getSides: async function () {
         try {
@@ -56,18 +54,27 @@ let functions = {
         }
     },
 
-    // Function to place an order (inserting data)
-    placeOrder: async function (burger, sides, drink) {
+    placeOrder: async function (burger, toppings, sides, drink) {
         try {
+            console.log("Burger:", burger);
+            console.log("Toppings:", toppings);
+            console.log("Sides:", sides);
+            console.log("Drink:", drink);
+    
             const db = await mysql.createConnection(config);  // Connect to the database
-            let sql = `INSERT INTO OrdersTb (burger, sides, drink) VALUES (?, ?, ?)`;  // Insert query
-            const [result] = await db.execute(sql, [burger, sides, drink]);  // Execute query with values
+            let sql = `INSERT INTO OrdersTb (burger, toppings, sides, drink) VALUES (?, ?, ?, ?)`;  // Insert query
+            const toppingsStr = toppings.join(', ');  // Convert toppings array to a string (e.g., "lettuce, tomato")
+            console.log("Toppings String:", toppingsStr);  // Log the formatted string for toppings
+            const [result] = await db.execute(sql, [burger, toppingsStr, sides, drink]);  // Execute query with values
             await db.end();  // End the connection after insertion
             return result;
         } catch (error) {
             console.error("Error executing query in placeOrder:", error);
+            throw error;  // Throw the error to handle it elsewhere
         }
     },
+    
+    
 }
 
 module.exports = functions;
