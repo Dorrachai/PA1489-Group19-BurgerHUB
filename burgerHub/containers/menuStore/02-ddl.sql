@@ -35,6 +35,7 @@ CREATE TABLE `OrdersTb`
 (
     `order_id` int NOT NULL AUTO_INCREMENT UNIQUE,
     `burger` VARCHAR (40),
+    `toppings` VARCHAR (60),
     `sides` VARCHAR (40),
     `drink` VARCHAR (40)
 
