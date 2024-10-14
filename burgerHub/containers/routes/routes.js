@@ -3,6 +3,7 @@
 const express = require("express");
 const router = express.Router();
 const src = require('/app/containers/burgerOrderer/burgerorderer.js');
+const kitchenview = require('/app/containers/kitchenView/kitchenview.js');
 
 router.get("/", (req, res) => {
     res.render("./../containers/views/pages/index.ejs");
@@ -15,7 +16,6 @@ router.get("/order", (req, res) => {
 router.get("/place-order", async (req, res) => {
     try {
         const burger = req.query.burger;
-        console.log(burger);
         const burgerInfo = await src.getBurger(burger);
         const sides = await src.getSides();
         const drinks = await src.getDrinks();
@@ -27,16 +27,19 @@ router.get("/place-order", async (req, res) => {
 
 router.post("/place-order", async (req, res) => {
     try {
-        console.log("Form data received:", req.body);  // Log all form data to ensure it's received
+        // console.log("Form data received:", req.body);  // Log all form data to ensure it's received
         const { burger_name, sides, drink, topping1, topping2, topping3 } = req.body;  // Destructure all form data
 
         // Combine the selected toppings
         const toppings = [topping1, topping2, topping3].filter(topping => topping !== 'none');  // Remove "none" toppings
 
         const result = await src.placeOrder(burger_name, toppings, sides, drink);
+        await kitchenview.showOrders();
+        const orderId = await src.getOrderId();
+        console.log(orderId);
 
         if (result) {
-            res.render("./../containers/views/pages/order-success");  // Render success page
+            res.render("./../containers/views/pages/order-success", {orderId});  // Render success page
         } else {
             res.status(500).send("Order placement failed: No result returned from DB.");
         }

@@ -32,7 +32,7 @@ let functions = {
             let sql = `SELECT * FROM SidesTb`;  // Query to select all sides
             const [rows] = await db.execute(sql);  // Execute the query
             await db.end();  // Close the database connection
-            console.log(rows);
+            // console.log(rows);
             return rows;  // Return the entire array of rows, not just the first row
         } catch (error) {
             console.error("Error executing query in editOrder:", error);
@@ -46,7 +46,6 @@ let functions = {
             let sql = `SELECT * FROM DrinksTb`;  // Query to select all sides
             const [rows] = await db.execute(sql);  // Execute the query
             await db.end();  // Close the database connection
-            console.log(rows);
             return rows;  // Return the entire array of rows, not just the first row
         } catch (error) {
             console.error("Error executing query in editOrder:", error);
@@ -56,15 +55,14 @@ let functions = {
 
     placeOrder: async function (burger, toppings, sides, drink) {
         try {
-            console.log("Burger:", burger);
-            console.log("Toppings:", toppings);
-            console.log("Sides:", sides);
-            console.log("Drink:", drink);
+            // console.log("Burger:", burger);
+            // console.log("Toppings:", toppings);
+            // console.log("Sides:", sides);
+            // console.log("Drink:", drink);
     
             const db = await mysql.createConnection(config);  // Connect to the database
             let sql = `INSERT INTO OrdersTb (burger, toppings, sides, drink) VALUES (?, ?, ?, ?)`;  // Insert query
             const toppingsStr = toppings.join(', ');  // Convert toppings array to a string (e.g., "lettuce, tomato")
-            console.log("Toppings String:", toppingsStr);  // Log the formatted string for toppings
             const [result] = await db.execute(sql, [burger, toppingsStr, sides, drink]);  // Execute query with values
             await db.end();  // End the connection after insertion
             return result;
@@ -72,6 +70,14 @@ let functions = {
             console.error("Error executing query in placeOrder:", error);
             throw error;  // Throw the error to handle it elsewhere
         }
+    },
+
+    getOrderId: async function () {
+        const db = await mysql.createConnection(config);
+        let sql = `SELECT order_id FROM OrdersTb ORDER BY order_id DESC LIMIT 1;`
+        const [result] = await db.execute(sql);
+        await db.end();
+        return result[0];
     },
     
     

@@ -1,27 +1,21 @@
 "use strict";
 
-const mysql  = require("promise-mysql");
 const config = require("/app/containers/menuStore/config/burgerhub.json");
-let db;
+const mysql = require("mysql2/promise");
 
-module.exports = {
-    showOrders: showOrders
+let kitchenview = {
+    
+    showOrders: async function () {
+        const db = await mysql.createConnection(config);  // Connect to the database
+        let sql = `SELECT * FROM OrdersTb;`;
+        
+        const [rows] = await db.execute(sql);  // Destructure to get only the rows
+        console.table(rows);  // Log only the rows (actual data)
+        
+        await db.end();  // Close the database connection
+    
+        return rows;  // Return the rows
+    }    
+
 }
-
-(async function() {
-    db = await mysql.createConnection(config);
-
-    process.on("exit", () => {
-        db.end();
-    });
-})();
-
-async function showOrders(table) {
-    let sql = `SELECT * FROM OrderTb;`;
-    let res;
-
-    res = await db.query(sql, [table]);
-    console.info(`SQL: ${sql} (${table}) got ${res.length} rows.`);
-
-    return res;
-}
+module.exports = kitchenview
