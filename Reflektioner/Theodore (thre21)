@@ -33,4 +33,5 @@ This day we had a meeting. I was mainly working on getting the docker to work wh
 7/10:
 Worked together to solve the error with database being empty. However little progress. We managed to fix so that is it possible to place an order no as the routes were wrong before.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
-11/10: Started work with the place order function. At the start of this session the place order does not save anything on the database.
+11/10: Started work with the place order function. At the start of this session the place order does not save anything on the database. Solved this problem by changing incorrect paths/routes.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
