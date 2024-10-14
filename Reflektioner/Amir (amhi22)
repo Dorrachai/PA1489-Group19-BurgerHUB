@@ -25,7 +25,6 @@ This was the officail start for assignment 2 we sat toghether in ericsson labs a
 
 24/9
 
-
 25/9
 
 26/9
@@ -44,4 +43,7 @@ This was the officail start for assignment 2 we sat toghether in ericsson labs a
 fix db creation
 
 9/10
-fix insert
+Today we started by trying to fix the error with inserting from our csv file into the db. We found the error to be that for some reason whenn the db is created it doesnt allow local infile. This was perventing us from inserting, to work around this we added a mysql cnf file that runs when the docker is started which tells the db to allow local infile. This worked on two of our machinces but not all, we later discovered that there seemed to be a problem with the terminals. When docker was run on ubuntu and mac terminals it worked fine but when run on gitbash it did not work. We found why gitbash didnt like it and soolved it aswell. After this we were able to continue work on the functionallity of the program making it so that when you choose burger you are prompted with a new page that lets you edit your order such as choose sides, drinks and toppings.
+
+9/11
+Today i continued on the work commited by one of the other group memebers finishing the save order function which adds the users oder to the db. We added to the already exsisting function by making it so that it also saves the specific toppings chosen and not just side and drinks. We started working on the kitchen view as well making a new file and adding the nesisary code for outputting the orders. We made it so that everytime a new order comes in we print the entire orders table so we can see all the orders that are waiting to be completed. We also added to the order success screen making it so that when you place an order you get a confirmation message and you order number promted on screen.
