@@ -1,15 +1,15 @@
 /**
- * 
+ *
  * This file contains unit tests that mock the MySQL database interactions
  * to test the following function:
- * 
+ *
  * - `showOrders`: Fetches all orders placed from the database.
- * 
+ *
  * All database calls are mocked to avoid using a live database.
  */
 
 const mysql = require('mysql2/promise');
-const kitchenview = require('../../Containers/kitchenView/kitchenview.js');
+const kitchenview = require('../../containers/kitchenView/kitchenview.js');
 jest.mock('mysql2/promise');
 
 describe('kitchenview tests', () => {

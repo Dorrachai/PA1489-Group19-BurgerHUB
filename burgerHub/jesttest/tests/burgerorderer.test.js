@@ -1,17 +1,17 @@
 /**
- * 
+ *
  * This file contains unit tests that mock the MySQL database interactions
  * to test the following functions:
- * 
+ *
  * - `getBurger`: Retrieves a burger and its toppings from the database.
  * - `placeOrder`: Places a new burger order with selected toppings, sides, and drink.
  * - `getOrderId`: Retrieves the latest order ID from the database.
- * 
+ *
  * All database calls are mocked to avoid using a live database.
  */
 
 const mysql = require('mysql2/promise');
-const burgerorderer = require('../../Containers/burgerOrderer/burgerorderer.js');
+const burgerorderer = require('../../containers/burgerOrderer/burgerorderer.js');
 jest.mock('mysql2/promise');
 
 describe('burgerorderer tests', () => {
