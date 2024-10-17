@@ -10,9 +10,9 @@ let functions = {
             const db = await mysql.createConnection(config);  // Connect to the database
             let sql = `SELECT * FROM MenuTb WHERE burger_name = ?`;  // Query to select the burger
             const [rows] = await db.execute(sql, [burger]);  // Execute the query with the burger parameter
-            
+
             await db.end();  // Close the database connection
-    
+
             if (rows.length > 0) {
                 // Assuming 'toppings' is stored as a comma-separated string in the database
                 const toppings = rows[0].toppings.split(',').map(topping => topping.trim());  // Split and trim toppings
@@ -59,7 +59,7 @@ let functions = {
             // console.log("Toppings:", toppings);
             // console.log("Sides:", sides);
             // console.log("Drink:", drink);
-    
+
             const db = await mysql.createConnection(config);  // Connect to the database
             let sql = `INSERT INTO OrdersTb (burger, toppings, sides, drink) VALUES (?, ?, ?, ?)`;  // Insert query
             const toppingsStr = toppings.join(', ');  // Convert toppings array to a string (e.g., "lettuce, tomato")
@@ -79,8 +79,8 @@ let functions = {
         await db.end();
         return result[0];
     },
-    
-    
+
+
 }
 
 module.exports = functions;
