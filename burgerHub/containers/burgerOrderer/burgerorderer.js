@@ -1,6 +1,6 @@
 "use strict";
 
-const config = require("../../containers/menuStore/config/burgerhub.json");
+const config = require("/app/containers/menuStore/config/burgerhub.json");
 const mysql = require("mysql2/promise");  // Use mysql2 with promises
 
 let functions = {
