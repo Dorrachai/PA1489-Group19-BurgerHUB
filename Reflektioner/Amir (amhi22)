@@ -24,26 +24,113 @@ our questions. We were on the right pass so we started working on assignment 2 a
 This was the officail start for assignment 2 we sat toghether in ericsson labs and did some programing together, i was mostly focused on setting up the database we were going to use for the assignemnt. I have had a lot of problems with github authentication but cloned the repository again and it seems to be working again.
 
 24/9
-
-25/9
+Today we spent most of our time setting up docker. It took sometime but we evetually got everything working on all machines this allowed us to send the project inbetween machines and letting docker setup dependencies and enviorment for us. Sicne only one of us had worked with docker before we took some time to let him explain how docker workes and how to configue docker with the yml file and dockerfile. I had the same issues with github but reinstallnig the repository got it working again.
 
 26/9
+Today since we got the docker working we started working on the actual website that was going to be used for the project. We started working on making the index page setting upp routes, app, views and pages. Getting a website that starts on a local host and adding our burgers to the page.
 
 30/9
+Today we fixed a small problem with docker that did not allow us to start the website using express if it was not already installed on the machine before running docker. This was done by making sure the "npm install" was run and the package.json file was up to date. We also added alot of styling and pictures into the css and ejs files allowing us to diaplay our burgers in sperate boxes with name, picture and description. I ran into the issue of github not allowing me to verify by passowrd/token. I decided this time to set up a SSH key instead for my git account and cloned the repository using the SSH url instead.
 
 1/10
+Today we continued working on the functionality of the program, such as addin funciton for adding to the db tables, made a new route for place-order. We added descriptions for each burger and swaped the palce holder.
 
 2/10
+We continued same as yesterday adding functionality to the website such as creating new functions, created a config file for the db. We ran into some pathway problems, but noticed we had to change the path way to "/app/./..." since we were running the program through the docker app container. The SSH change i made to connect from my terminal to ubuntu seamed to fix all issues with connection to github.
 
 3/10
+Did not get that much progress today, we were encountering issues with the db not creating correctly/not inserting leaving it empty. We made a big commit that semmed to get everything to work but we were not sure if it was a local solution or a permament fix. We made a commmit with all the code but, we were not sure if we wanted to merge this into the main code.
 
 7/10
+Today we continued with yesterdays problem, we had the website working but kept enconutering issues with the db, having either the problem be that the db was empty or non existing. And some minor errors in syntax while trying to load into the ejs files. We found that our tests and debuging of the problem may be inconsistent because when we restared docker we just ran "docker-compose down" and "docker-compose up --build", when in reality we should run "docker-compose down -v" ensuring we run on a clean slate so that any preexisting informaiton is not falsly displayed when we run again.
 
 8/10
-fix db creation
+We got a new group member today, we helped them gain access to our guthub and had a walktrough about our plans what code we have, how it works, how timeplan and trello card. Making sure they were on the same page as us. They made their first commit.
+We contined today with db debugging, trying to get the inserts to work. After using "docker-compose exec mysql-db bash" we manually executed the insert file using "mysql -u root -p BurgerHub < insert.sql" to se where the problem would arise. We found that when trying to run the "insert.sql" file, the db did not allow "local-infile" leading the insert to fail. To work around this we went into the db in the docker and ran "SET GLOBAL local_infile = 1;" this allowed us to insert the sql file into the db, but we noticed this was not a permanent fix since when running the "docker-compose down -v" command this woudl reset "local-infile" to 0 not allowing the insert again. We spent the rest of the day trying to come up with ideas to fix this such as adding local infile=1 to the db volume in the docker.yml file but to no avail.
+
 
 9/10
 Today we started by trying to fix the error with inserting from our csv file into the db. We found the error to be that for some reason whenn the db is created it doesnt allow local infile. This was perventing us from inserting, to work around this we added a mysql cnf file that runs when the docker is started which tells the db to allow local infile. This worked on two of our machinces but not all, we later discovered that there seemed to be a problem with the terminals. When docker was run on ubuntu and mac terminals it worked fine but when run on gitbash it did not work. We found why gitbash didnt like it and soolved it aswell. After this we were able to continue work on the functionallity of the program making it so that when you choose burger you are prompted with a new page that lets you edit your order such as choose sides, drinks and toppings.
 
-9/11
+10/10
 Today i continued on the work commited by one of the other group memebers finishing the save order function which adds the users oder to the db. We added to the already exsisting function by making it so that it also saves the specific toppings chosen and not just side and drinks. We started working on the kitchen view as well making a new file and adding the nesisary code for outputting the orders. We made it so that everytime a new order comes in we print the entire orders table so we can see all the orders that are waiting to be completed. We also added to the order success screen making it so that when you place an order you get a confirmation message and you order number promted on screen.
+
+11/10
+Today we fixed some of th elast chagnes to the webpage such as saving placed orders into the db, added a new column to handle toppings choice and made a base for the kitchenview. At first we thought about making a cli terminal, where we had a while loop the promted the admin with different commands that they coudl use. Such as "show orders", "delete order" etc. But following the assigment description we instead ended up going with a simple print with the orders placed. We made a new kitchview js to hold funcitons related to this part of the program. We made it so that evertime an order is placed a colsole log is made with all order placed so that the person making order can see all orders that need to be made with the oredr number next to it. We also made som adjustments to ejs and css to make the order-placed page look a bit more nice and give the user their order number.
+
+14/10
+Since we felt mostly done with functionality and that we had implemented what needed to be added, we chose to make sure everything was merged corectly and cleaned up some files that were not neccisary. We also started working on the report that is handed in alongside the project.
+
+15/10
+Today we continued working on the report and our diarys ensureing they were updated and filled in. We compleded assignment 2 today making us finished with both assignment 1 and 2, leaving only assignment 3 until we were completed.
+
+16/10
+Today we created automated tests for our website using cypress, this was to ensure that the frontend of the project worked as intended. Started working on assignment 3
+
+17/10
+This day we continued with automated tests but for the backend, we ran into some small issues with pathing but this was quickly fixed so that everything worked again. We continued working on assignment 3 aswell.
+
+18/10
+We finsihed assignemnt 3 and everyone has had their own debug session. I made sure to update my diary so that i filled in all the days that we worked. I had a lot written down on my laptop and made sure to include it here i also went back and read our commits to make sure i did not miss what we had done.
+
+Debuging
+
+1. What functionality did you choose to debug?
+I chose to debug the functionality of placing a burger order (POST /place-order). This involves fetching a burger from the database, selecting toppings, sides, and a drink, and then inserting the order into the OrdersTb table.
+
+2. Where did you set breakpoints and how did you find the correct file to set them?
+Breakpoints were set in the following parts of the code:
+Before inserting the order into the database: This was inside the placeOrder function in the burgerorderer.js file. The breakpoint ensures that all form data (burger_name, sides, drink, toppings) is correctly received and processed before executing the query.
+
+After fetching the burger from the database: This was in the getBurger function, ensuring the correct burger data is being fetched.
+
+After fetching the order ID: This breakpoint was in the getOrderId function after the order has been inserted to ensure that the latest order ID is being retrieved correctly.
+
+3. How did you proceed with debugging?
+Using the following commands during debugging:
+
+Continue: This was used after verifying that the data was fetched correctly from the database (getBurger). After setting the breakpoint and inspecting the values, I used "Continue" to proceed with the execution of the program and place the order.
+
+Step Over: I used "Step Over" when executing queries inside placeOrder to check if the query ran successfully without diving into the MySQL functions. It was also used when creating the toppingsStr variable to check the string formatting of the toppings.
+
+Step Into: This was used to inspect more complex logic, such as splitting and trimming the toppings array inside getBurger, to ensure that the array manipulation worked as expected.
+
+Step Out: After inspecting some logic inside helper functions, I used "Step Out" to return to the main execution flow.
+
+4. Monitoring a variable
+Variable monitored: The toppings variable was monitored inside the placeOrder function to ensure that it was correctly processed from multiple inputs into a comma-separated string (topping1, topping2, topping3).
+
+How did I monitor it? By using console.log() statements in the placeOrder function before it was inserted into the database to check the value of the toppingsStr.
+
+Value: The value of toppingsStr was 'lettuce, tomato, cheese'.
+
+When does the value change? The value of toppingsStr changes when the user selects different toppings on the form. It is created by combining the selected topping values and is updated when the form is submitted.
+
+5. Trying different paths through the functionality
+Ordering different items: I placed several different orders, selecting different combinations of toppings, sides, and drinks to see if the order was processed correctly. This confirmed that the data was flowing correctly and was inserted into the database as expected.
+
+Aborting halfway: By intentionally submitting partial data (e.g., not selecting a drink), I observed the system's behavior and made sure that error handling was triggered appropriately, returning a 500 status and an error message.
+
+Summary and Reflection
+What went well? The system handled the burger selection, toppings customization, and order insertion as expected. The debugging process revealed that the logic for splitting the toppings was correct, and inserting the order into the database worked smoothly when the correct data was provided.
+
+What went less well? Initially, there was an issue where the burger_name was not being passed in the form, leading to undefined values in the placeOrder function. This was resolved by adding a hidden input field in the EJS form to ensure that burger_name was submitted with the form.
+
+What was easy? Using console.log() to monitor the flow of data and values in real-time was very helpful. Stepping through the code with breakpoints allowed me to verify the correctness of each step.
+
+What was difficult? Debugging Docker-related issues when the local environment and container setup differed across team members was challenging. Issues with file paths and MySQL configurations took more time to resolve.
+
+Is debugging useful? Yes, debugging is a valuable tool because it helped isolate the problem areas in the code, especially when dealing with asynchronous database queries and form data submission. Being able to inspect and step through the program flow helps catch issues early, preventing runtime errors from going unnoticed.
+
+
+(a) Collaboration
+We divided responsibilities within the group and communicated through GitHub and other tools. Despite different time zones, collaboration went smoothly by sending regular updates and solving problems together when needed.
+
+(b) Configuration Management
+We used Git and Docker to manage versions and environments. By using separate feature branches and pull requests, we avoided conflicts in the code. Docker helped standardize the environment, though we faced file permission issues across different operating systems, which required adjustments.
+
+(c) Implementation and Documentation
+We split the code into modules for a clear and structured implementation. Through GitHub, we documented changes and used comments to explain more complex parts of the code.
+
+(d) Testing and Debugging
+We tested manually by placing orders and monitoring the database. Debugging was done using breakpoints and console.log, where we tracked variables like toppings and order IDs to ensure correct values were used during orders.
