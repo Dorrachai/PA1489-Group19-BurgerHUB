@@ -19,7 +19,7 @@ Today we contacted Mikael to check if we were on the right track in this project
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 23/9:
 The official start of assignment 2 we started the creation of setups. We sat in a group and did some pair programming. I spent most of the time trying to implement docker into our project. Even though familliar with docker I rarely use it myself and spent a lot of time with little to no success in implementing it. 
--------------------------------------------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------  ---------------------------
 24/9:
 Today we focused on setting up our ddocker containers to work with our backend code. The resuslt were successful as we were able to connect to our database via docker, now we only need to add frontend,functionality and a correct redirect for this assignment to be considered as complete.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -34,4 +34,13 @@ This day we had a meeting. I was mainly working on getting the docker to work wh
 Worked together to solve the error with database being empty. However little progress. We managed to fix so that is it possible to place an order no as the routes were wrong before.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 11/10: Started work with the place order function. At the start of this session the place order does not save anything on the database. Solved this problem by changing incorrect paths/routes.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+16/10:
+I spent some time writing on the assignment 2 report. 
+Later in the day I configured automated Cypress tests for end-to-end testing of the UI, making sure burger orders could be placed, dropdown menus worked 
+and the process could go on without interruptioon. I also worked on setting up Jest for backend tests, but ran into some issues with module paths and chose to do that tomorrow instead.
+A problem that "double trouble" burger tests did not work as inteded occured. My theory is that the burger uses a different name in the database, however when manually testing the named burger no problems occured.
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+17/10: I tackled the Jest testing errors. After troubleshooting I corrected the file paths in both burgerorderer.js and kitchenview.js. 
+I also wrote unit tests to mock the database, ensuring that functions for fetching burgers and placing orders work correctly. The files will be ready to merge after my lab members tests my branch.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
