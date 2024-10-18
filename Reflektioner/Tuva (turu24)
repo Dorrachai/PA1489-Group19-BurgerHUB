@@ -52,7 +52,8 @@ I'm working on centering the order success text. I managed to move it by using m
 the spacing.
 
 11/10
-I tried to add an order number the order success page. It was pretty difficult, I could not make it work.  
+I tried to add an order number the order success page. It was pretty difficult, I could not make 
+it work.  
 
 15/10
 Reflection and working on the writing part of the assignment
@@ -62,14 +63,18 @@ Same as the day before
 
 17/10
 Debug session:
-1.During this debug session, I chose to examine the showOrders() function, which retrieves and returns the data from a database. My goal was to understand how the function handles the database queries, logs the results, and closes the database connection. I also wanted to test different scenarios to see how the code reacts to different types of inputs and errors.
+1.During this debug session, I chose to examine the showOrders() function, which retrieves and 
+returns the data from a database. My goal was to understand how the function handles the database 
+queries, logs the results, and closes the database connection. I also wanted to test different scenarios
+to see how the code reacts to different types of inputs and errors.
 
 2.Setting breakpoints
 The file: PA1489-GROUP19-BURGERHUB/burgerHub/containers/kitchenviews.js
 I started by setting breakpoints at strategic points in the code to track how it executes. 
 
 The first breakpoint was set on the line where the SQL query is sent to the database:
-const [rows] = await db.execute(sql); (This line is critical as it is where the communication with the database happens, and the data is fetched)
+const [rows] = await db.execute(sql); (This line is critical as it is where the communication 
+with the database happens, and the data is fetched)
 
 The second breakpoint was set on the line where the data is logged:
 console.table(rows); 
@@ -80,28 +85,48 @@ await db.end();
 I wanted to make sure that the database connection was properly closed after the query was executed.
 
 3.The debug session
-When i ran the debug, the program paused at the first breakpoint where the SQL query was executed. Here, I used "Step over" since i didn't need to dive into the database connection library, i focused on the information being fetched instead.
-At the next breakpoint, I was able to inspect rows. which contained the result of the SQL query. Seeing this gave me clear understanding of how the data was structured and handled. I also confirmed that the SQL was correctly formatted before it was sent, by inspecting its value in the debugger.
+When i ran the debug, the program paused at the first breakpoint where the SQL query was executed. 
+Here, I used "Step over" since i didn't need to dive into the database connection library, i focused 
+on the information being fetched instead.
+At the next breakpoint, I was able to inspect rows. which contained the result of the SQL query. 
+Seeing this gave me clear understanding of how the data was structured and handled. I also confirmed 
+that the SQL was correctly formatted before it was sent, by inspecting its value in the debugger.
 
 4.Watching variables
 I watched the variable rows during the session to see how it changed throughout the execution.
 Initially the variable was undefined before the SQL query was executed.
-After executing the variable was populated with data from the database, as expected. Seeing this "real-time" change in the variable was helpful in understanding how data flow through the code.
+After executing the variable was populated with data from the database, as expected. Seeing this 
+"real-time" change in the variable was helpful in understanding how data flow through the code.
 
 5.Testing different paths through the functionally
 I tested various scenarios to see how the code handled different situations:
-Normal execution: When I ran a normal SQL query (SELECT * FROM OrdersTb; ), the orders were fetched as expected. Everything worked as it should, and the database connection closed properly afterward.
-Empty result: I modified the SQL query to something that would return no results ( SELECT * FROM OrdersTB WHERE 1=0; ). In this case, rows became an empty array, which the program handled without issues. 
+Normal execution: When I ran a normal SQL query (SELECT * FROM OrdersTb; ), the orders were fetched 
+as expected. Everything worked as it should, and the database connection closed properly afterward.
+Empty result: I modified the SQL query to something that would return no results 
+( SELECT * FROM OrdersTB WHERE 1=0; ). In this case, rows became an empty array, which the program 
+handled without issues. 
 
 Reflection and summary
 What went well?
-I was able follow the flow through the code and see how the data was fetched and logged correctly. The debug session made it easier to understand what was happening at each step, especially with regards to the database queries.
+I was able follow the flow through the code and see how the data was fetched and logged correctly. 
+The debug session made it easier to understand what was happening at each step, especially with regards 
+to the database queries.
 
 What was easy?
-Setting the breakpoints and using tools like "step over" and "step into" to move through the code was simple. Watching variables like rows made it easy to track the data throughout the execution.
+Setting the breakpoints and using tools like "step over" and "step into" to move through the code was 
+simple. Watching variables like rows made it easy to track the data throughout the execution.
 
 What was difficult?
-It was difficult to keep track of exactly when certain lines of code were executed, especially with the use of "await", as it makes the program wait for some operations to complete.
+It was difficult to keep track of exactly when certain lines of code were executed, especially with 
+the use of "await", as it makes the program wait for some operations to complete.
 
 Can debugging be a useful tool for me?
-Yes, debugging seems very useful, especially when working with complex systems. Being able to see what is happening in real-time makes it much easier to identify errors and optimize code. 
+Yes, debugging seems very useful, especially when working with complex systems. Being able to see 
+what is happening in real-time makes it much easier to identify errors and optimize code. 
+
+18/10
+We refined the writing part of the assignment, some did the debugging session.
+In conclusion the project as a whole was difficult for me to complete since I have no prior 
+experience with programming. It has been educational to test and use GitHub and Docker. This will 
+be useful in the future. Developing the habit of writing and taking notes in a journal, as well as 
+debugging, can also be very valuable.
