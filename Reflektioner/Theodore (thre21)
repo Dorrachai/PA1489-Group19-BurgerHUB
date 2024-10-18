@@ -44,3 +44,41 @@ A problem that "double trouble" burger tests did not work as inteded occured. My
 17/10: I tackled the Jest testing errors. After troubleshooting I corrected the file paths in both burgerorderer.js and kitchenview.js. 
 I also wrote unit tests to mock the database, ensuring that functions for fetching burgers and placing orders work correctly. The files will be ready to merge after my lab members tests my branch.
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Chosen Functionality:
+
+I chose to debug the showOrders function from kitchenview.js. This function is responsible for retrieving and displaying all orders from the database for the kitchen to process. It is part of a key part of the system since it directly affects the kitchen’s workflow.
+
+Breakpoints:
+
+I placed a breakpoint at line 15 where the SQL query is executed to fetch orders from the OrdersTb table. This seemed like the ideal spot because it is where the program interacts with the database to get order details such as the burger name, sides, and drinks.
+
+Using the Debugger Buttons:
+
+Once the debugger hit my breakpoint, I used Step Over to move line by line and see the results of the SQL query. I wanted to observe the query execution without diving too deep into internal SQL processes, so I didn’t use Step Into. I also used Continue to skip over multiple lines of code until I needed to stop again at a critical point.
+
+Watching Variables:
+
+The key variable I watched was rows, as it stored the query result with all the orders. By watching this variable, I could see what data was being retrieved from the database after the query ran. I also monitored orders, which processes the rows variable into a format that can be displayed to the kitchen.
+
+Value Observations:
+
+After stepping over the SQL query I noted that rows contained an array of objects, each representing an order. Each object had fields like burger, sides, and drink. I also watched how the orders variable structured this data to ensure that all details were correctly processed.
+
+Testing Different Scenarios:
+
+I tested different scenarios, such as retrieving multiple orders and testing with an empty database. When there were no orders in the database the rows variable returned an empty array which the function handled correctly by returning an empty list to the UI.
+
+Summary and Reflection:
+
+	•	What Went Well: I successfully tracked how the showOrders function retrieved and processed data from the database. Watching the rows and orders variables allowed me to verify that the data was being processed correctly.
+	•	Challenges: Debugging asynchronous code took some time to understand, especially as the code dealt with promises. It required patience to step through the promises correctly.
+	•	Ease of Use: Watching variables and stepping through simpler parts of the code was intuitive once I got the hang of it.
+
+Is Debugging Useful?
+
+Debugging was quite helpful in understanding the processes in the function. However for simpler tasks, using console.log() might have been a quicker way to check values (something I did when checking if data was saved on the db) but debugging is good in more complex scenarios where tracking variable changes over time is essential.
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+18/10: Today was our final day. We checked the reports and did some finall touches. All in all this project was fun but a bit too big for such a small group with little knowledge. Personally for me it was difficult to arrange meetings with my groups due to timezones but we managed to work together anyways and had a transparent communication. 
+
