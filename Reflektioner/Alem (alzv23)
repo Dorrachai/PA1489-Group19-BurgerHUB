@@ -50,4 +50,59 @@ Continued fixing the database problem most of the day. We managed to get it work
 
 10/10
 Now we are working quicker again since menustore works as it should.
-The order page is now done. I started using ubuntu to test and debug the docker since the database load correctly there. The group is working efficiently, the new groupmember is contributing well. We changed the toppings to three total to make it look better. 
+The order page is now done. I started using ubuntu to test and debug the docker since the database load correctly there. The group is working efficiently, the new groupmember is contributing well. We changed the toppings to three total to make it look better.
+
+11/10
+We added a button when you order it tells you what order number you have. This is the last thing we needed to add, we are now done with the code. Now we only have the rapport left.
+
+14/10
+We cleaned the code removing unessarcy files. We started writing the rapport. We finished part 1 of the rapport.
+
+15/10
+We started writing part 2 of the rapport. So far it has been going good but it feels like we are repeating ourself mostly.
+
+16/10
+We finished part 2 of the rapport.
+
+17/10
+
+Chosen Functionality:
+I picked the getBurger function to try and debug. This function is supposed to get the burger information from the database, including the toppings. I thought it was a good place to start since it's one of the key parts of the order system.
+
+Breakpoints:
+I put the breakpoint on line 21, which is where the code runs a SQL query to fetch the burger data from the database. I thought this was the right spot because it’s where the program tries to get the actual burger information from the MenuTb table. I found this line in the file called burgerhub.js, which is in the /app/containers/menuStore/config/ folder.
+
+Using the Debugger Buttons:
+Once the code hit my breakpoint, I tried using the "Step Over" button to move to the next line, which would let me see the result of the query. I didn’t want to go too deep into the SQL stuff, so I didn’t use "Step Into". I also used "Continue" a few times to let the program run until it either hit another breakpoint or finished. I wasn’t quite sure how to use "Step Out", so I didn’t bother with that one.
+
+Watching Variables:
+I watched the rows variable because it’s where the query result is stored. I wanted to check if it was actually getting the burger I was asking for. I added it to the debugger’s watch list, so I could see what was inside it after the SQL query ran. I also watched the burger variable to make sure it was being passed correctly into the function.
+
+Value: When I stepped over the query execution, I saw that rows was an array with the burger's information. The toppings were all in one string, so I also checked how the code split them into an array of individual toppings.
+
+Tracking Changes: I could see how the value of rows changed after the query, but I wasn’t able to set anything up to automatically detect changes. I just stepped over each line and manually checked the variable values as I went along.
+
+Testing Different Scenarios:
+I tried ordering different burgers and saw that the code changed depending on what I ordered. I also tried ordering a burger that didn’t exist to see how the function handled it. When that happened, rows was empty, and the function returned null, which was what I expected.
+
+How this changed the code: Different burgers affected how the code worked. If the burger didn’t exist, the code didn’t bother processing the toppings and just returned null.
+Watched Variables: I noticed that rows was empty when no burger was found, and it was filled with the correct data when a valid burger was selected.
+Summary and Reflection
+What Went Well:
+I was able to understand how the getBurger function works with the database. Seeing how the SQL query was processed and checking the rows and toppings variables was really helpful. I could see the data change as I stepped through the code.
+
+What Was Difficult:
+Setting breakpoints and stepping through the code was harder than I thought it would be. I’m still getting used to how debugging works, especially with asynchronous code. It felt slow and a little confusing at times. Debugging in a Docker environment was also trickier than I expected.
+
+What Was Easy:
+Watching variables and stepping through simple parts of the code was pretty straightforward. Once I understood how to add variables to the watch list, it was easy to see what was going on.
+
+What Was Hard:
+Debugging this Node.js application running inside Docker felt more complicated than just working on code locally. Sometimes I wasn’t sure if I was doing things right or if I could have gotten the same results faster by using console.log() instead of the debugger.
+
+Is Debugging Useful?
+Not always: In this case, it felt like debugging took longer than it should have. It might have been faster to just use some print statements to check the query results and variable values. Debugging is probably useful for more complex problems, but here it seemed like more work than necessary.
+
+18/10
+We finished assignment 3 and doing so we are now done with the project. We polished the rapports.
+Overall my thoughts about the course are that it is a very big project and maybe alittle to hard for first year students. Our group dynamic worked very well and everyone did their part and as much as they could and tired to learn, this was especially important then Tuva joined our group later on. My thoughts around GitHub are very positive this was my first time doing anything with git and it was hard in the start when I learned quickly and could start working on my own. Docker I had a hard time understanding at first why we had to use it later on I realized why, it is especially important when working with bigger projects with more modules. I debugged through the project always making minor adjustments trying to figure out what the problems was. 
